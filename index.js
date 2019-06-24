@@ -21,13 +21,14 @@ restService.post("/echo", function(req, res) {
         items: [
           {
             simpleResponse: {
-               var speech =
+               var real :
     req.body.queryResult &&
     req.body.queryResult.parameters &&
     req.body.queryResult.parameters.echoText
       ? req.body.queryResult.parameters.echoText
-      : "Seems like some problem. Speak again.";
-              textToSpeech: speech
+      : "Seems like some problem. Speak again.",
+              
+              textToSpeech: real;
   
             }
           }
