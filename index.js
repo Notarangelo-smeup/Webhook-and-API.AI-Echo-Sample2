@@ -22,9 +22,9 @@ restService.post("/echo", function(req, res) {
       : "Seems like some problem. Speak again.";
   */
   var persona = req.body.queryResult.parameters.persona.name;
-//  var periodo= req.body.periodo.startDate;
-//  var periodo1=req.body.periodo.endDate;
- // var intento= req.body.intent.displayName;
+  var periodoiniziale= req.body.queryResult.parameters.periodo.startDate;
+  var periodofinale=req.body.queryResult.parameters.periodo.endDate;
+  var intento= req.body.queryResult.intent.displayName;
   var temp = {
     google: {
       expectUserResponse: true,
@@ -49,10 +49,10 @@ restService.post("/echo", function(req, res) {
       ? req.body.queryResult.parameters.echoText
       : "Seems like some problem. Speak again.";
       */
- var persona = req.body.queryResult.parameters.persona.name;
- // var periodo= req.body.periodo.startDate;
- // var periodo1=req.body.periodo.endDate;
-  //var intento= req.body.intent.displayName;
+  var persona = req.body.queryResult.parameters.persona.name;
+  var periodoiniziale= req.body.queryResult.parameters.periodo.startDate;
+  var periodofinale=req.body.queryResult.parameters.periodo.endDate;
+  var intento= req.body.queryResult.intent.displayName;
   return res.json({
     payload: temp,
     data: temp,
