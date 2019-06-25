@@ -46,6 +46,7 @@ restService.post("/echo", function(req, res) {
   return res.json({
     payload: temp,
     data: temp,
+    
     fulfillmentText: speech,
     speech: speech,
     displayText: speech,
