@@ -21,12 +21,7 @@ restService.post("/echo", function(req, res) {
       ? req.body.queryResult.parameters.echoText
       : "Seems like some problem. Speak again.";
   
-  var real =
-    req.body.queryResult &&
-    req.body.queryResult.parameters &&
-    req.body.queryResult.parameters.testo
-      ? req.body.queryResult.parameters.testo
-      : "Seems like some problem. Speak again.";
+
   
   var temp = {
     google: {
@@ -37,7 +32,7 @@ restService.post("/echo", function(req, res) {
             simpleResponse: {
              
               
-              textToSpeech:speech + real
+              textToSpeech:speech 
   
             }
           }
@@ -45,12 +40,7 @@ restService.post("/echo", function(req, res) {
       }
     }
   };
-  var real =
-    req.body.queryResult &&
-    req.body.queryResult.parameters &&
-    req.body.queryResult.parameters.testo
-      ? req.body.queryResult.parameters.testo
-      : "Seems like some problem. Speak again.";
+
   var speech =
     req.body.queryResult &&
     req.body.queryResult.parameters &&
