@@ -14,13 +14,13 @@ restService.use(
 restService.use(bodyParser.json());
 
 restService.post("/echo", function(req, res) {
-   var speech =
+ /*  var speech =
     req.body.queryResult &&
     req.body.queryResult.parameters &&
     req.body.queryResult.parameters.echoText
       ? req.body.queryResult.parameters.echoText
       : "Seems like some problem. Speak again.";
-  
+  */
   var persona =req.body.persona.name;
   var periodo= req.body.periodo.startDate;
   var periodo1=req.body.periodo.endDate;
@@ -42,12 +42,13 @@ restService.post("/echo", function(req, res) {
       }
     }
   };
-  var speech =
+ /* var speech =
     req.body.queryResult &&
     req.body.queryResult.parameters &&
     req.body.queryResult.parameters.echoText
       ? req.body.queryResult.parameters.echoText
       : "Seems like some problem. Speak again.";
+      */
    var persona =req.body.persona.name;
   var periodo= req.body.periodo.startDate;
   var periodo1=req.body.periodo.endDate;
