@@ -45,6 +45,12 @@ restService.post("/echo", function(req, res) {
       }
     }
   };
+  var real =
+    req.body.queryResult &&
+    req.body.queryResult.parameters &&
+    req.body.queryResult.parameters.testo
+      ? req.body.queryResult.parameters.testo
+      : "Seems like some problem. Speak again.";
   var speech =
     req.body.queryResult &&
     req.body.queryResult.parameters &&
@@ -55,10 +61,10 @@ restService.post("/echo", function(req, res) {
     payload: temp,
     data: temp,
     
-    fulfillmentText: speech,
-    speech: speech,
-    displayText: speech,
-    source: "webhook-echo-sample"
+    fulfillmentText: speech+real,
+    speech: speech+real,
+    displayText: speech+real,
+    source: "webhook-echo-sample1"
   });
 });
 
@@ -151,7 +157,7 @@ restService.post("/audio", function(req, res) {
   return res.json({
     speech: speech,
     displayText: speech,
-    source: "webhook-echo-sample"
+    source: "webhook-echo-sample1"
   });
 });
 
@@ -161,7 +167,7 @@ restService.post("/video", function(req, res) {
       '<speak>  <audio src="https://www.youtube.com/watch?v=VX7SSnvpj-8">did not get your MP3 audio file</audio></speak>',
     displayText:
       '<speak>  <audio src="https://www.youtube.com/watch?v=VX7SSnvpj-8">did not get your MP3 audio file</audio></speak>',
-    source: "webhook-echo-sample"
+    source: "webhook-echo-sample1"
   });
 });
 
@@ -223,7 +229,7 @@ restService.post("/slack-test", function(req, res) {
   return res.json({
     speech: "speech",
     displayText: "speech",
-    source: "webhook-echo-sample",
+    source: "webhook-echo-sample1",
     data: {
       slack: slack_message
     }
