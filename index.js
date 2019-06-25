@@ -20,6 +20,14 @@ restService.post("/echo", function(req, res) {
     req.body.queryResult.parameters.echoText
       ? req.body.queryResult.parameters.echoText
       : "Seems like some problem. Speak again.";
+  
+  var real =
+    req.body.queryResult &&
+    req.body.queryResult.parameters &&
+    req.body.queryResult.parameters.testo
+      ? req.body.queryResult.parameters.testo
+      : "Seems like some problem. Speak again.";
+  
   var temp = {
     google: {
       expectUserResponse: true,
@@ -29,7 +37,7 @@ restService.post("/echo", function(req, res) {
             simpleResponse: {
              
               
-              textToSpeech:speech 
+              textToSpeech:speech + real
   
             }
           }
