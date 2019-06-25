@@ -21,9 +21,9 @@ restService.post("/echo", function(req, res) {
       ? req.body.queryResult.parameters.echoText
       : "Seems like some problem. Speak again.";
   
-  let persona =req.body.persona;
-  let periodo= req.body.periodo;
-  let intento= req.body.intent;
+  var persona =req.body.persona;
+  var periodo= req.body.periodo;
+  var intento= req.body.intent;
   var temp = {
     google: {
       expectUserResponse: true,
@@ -47,9 +47,9 @@ restService.post("/echo", function(req, res) {
     req.body.queryResult.parameters.echoText
       ? req.body.queryResult.parameters.echoText
       : "Seems like some problem. Speak again.";
-   let persona =req.body.persona;
-  let periodo= req.body.periodo;
-  let intento= req.body.intent;
+   var persona =req.body.persona;
+  var periodo= req.body.periodo;
+  var intento= req.body.intent;
   return res.json({
     payload: temp,
     data: temp,
