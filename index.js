@@ -20,6 +20,10 @@ restService.post("/echo", function(req, res) {
     req.body.queryResult.parameters.echoText
       ? req.body.queryResult.parameters.echoText
       : "Seems like some problem. Speak again.";
+  
+  let persona =req.body.persona;
+  let periodo= req.body.periodo;
+  let intento= req.body.intent;
   var temp = {
     google: {
       expectUserResponse: true,
@@ -29,7 +33,7 @@ restService.post("/echo", function(req, res) {
             simpleResponse: {
              
               
-              textToSpeech:speech 
+              textToSpeech:speech +persona+intento+periodo
   
             }
           }
@@ -43,12 +47,15 @@ restService.post("/echo", function(req, res) {
     req.body.queryResult.parameters.echoText
       ? req.body.queryResult.parameters.echoText
       : "Seems like some problem. Speak again.";
+   let persona =req.body.persona;
+  let periodo= req.body.periodo;
+  let intento= req.body.intent;
   return res.json({
     payload: temp,
     data: temp,
-    fulfillmentText: speech,
-    speech: speech,
-    displayText: speech,
+    fulfillmentText: speech+persona+periodo+intento,
+    speech: speech+persona+periodo+intento,
+    displayText: speech+persona+periodo+intento,
     source: "webhook-echo-sample"
   });
 });
