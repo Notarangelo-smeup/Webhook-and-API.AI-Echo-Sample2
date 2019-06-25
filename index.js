@@ -21,10 +21,10 @@ restService.post("/echo", function(req, res) {
       ? req.body.queryResult.parameters.echoText
       : "Seems like some problem. Speak again.";
   */
-  var persona =req.body.persona.name;
-  var periodo= req.body.periodo.startDate;
-  var periodo1=req.body.periodo.endDate;
-  var intento= req.body.intent.displayName;
+  var persona = req.body.queryResult.parameters.persona.name;
+//  var periodo= req.body.periodo.startDate;
+//  var periodo1=req.body.periodo.endDate;
+ // var intento= req.body.intent.displayName;
   var temp = {
     google: {
       expectUserResponse: true,
@@ -34,7 +34,7 @@ restService.post("/echo", function(req, res) {
             simpleResponse: {
              
               
-              textToSpeech:persona+intento+periodo+periodo1
+              textToSpeech:persona
   
             }
           }
@@ -49,16 +49,16 @@ restService.post("/echo", function(req, res) {
       ? req.body.queryResult.parameters.echoText
       : "Seems like some problem. Speak again.";
       */
-   var persona =req.body.persona.name;
-  var periodo= req.body.periodo.startDate;
-  var periodo1=req.body.periodo.endDate;
-  var intento= req.body.intent.displayName;
+ var persona = req.body.queryResult.parameters.persona.name;
+ // var periodo= req.body.periodo.startDate;
+ // var periodo1=req.body.periodo.endDate;
+  //var intento= req.body.intent.displayName;
   return res.json({
     payload: temp,
     data: temp,
-    fulfillmentText:persona+periodo+intento+periodo1,
-    speech: persona+periodo+intento+periodo1,
-    displayText:persona+periodo+intento+periodo1,
+    fulfillmentText:persona,
+    speech: persona,
+    displayText:persona,
     source: "webhook-echo-sample1"
   });
 });
