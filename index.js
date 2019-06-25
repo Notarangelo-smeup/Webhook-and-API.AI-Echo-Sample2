@@ -34,7 +34,7 @@ restService.post("/echo", function(req, res) {
             simpleResponse: {
              
               
-              textToSpeech:persona
+              textToSpeech:"ti mostro le attività di " + persona +" " + "nel periodo da:" + periodoiniziale+"-" + periodofinale
   
             }
           }
@@ -56,9 +56,9 @@ restService.post("/echo", function(req, res) {
   return res.json({
     payload: temp,
     data: temp,
-    fulfillmentText:persona,
-    speech: persona,
-    displayText:persona,
+    fulfillmentText:"ti mostro le attività di " + persona +" " + "nel periodo da:" + periodoiniziale+"-" + periodofinale,
+    speech:"ti mostro le attività di " + persona +" " + "nel periodo da:" + periodoiniziale+"-" + periodofinale ,
+    displayText:"ti mostro le attività di " + persona +" " + "nel periodo da:" + periodoiniziale+"-" + periodofinale,
     source: "webhook-echo-sample1"
   });
 });
