@@ -62,7 +62,7 @@ restService.post("/echo", function(req, res) {
     fulfillmentText:"ti mostro le attività di " + persona +" " + "nel periodo da:" + periodoiniziale+"-"+periodofinale+" " +"intento:"+intento,
     speech:"ti mostro le attività di " + persona +" " + "nel periodo da:" + periodoiniziale+"-"+periodofinale+" " +"intento:"+intento,
     displayText:"ti mostro le attività di " + persona +" " + "nel periodo da:" + periodoiniziale+"-"+periodofinale+" " +"intento:"+intento,
-    source: "webhook-echo-sample1"
+    source: "webhook-echo-sample2"
   });
 });
 
