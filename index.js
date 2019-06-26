@@ -22,8 +22,8 @@ restService.post("/echo", function(req, res) {
       : "Seems like some problem. Speak again.";
   */
   var persona = req.body.queryResult.parameters.persona.name;
-  var periodoiniziale= req.body.queryResult.parameters.periodo.startDate;
-  var periodofinale=req.body.queryResult.parameters.periodo.endDate;
+  var periodoiniziale= req.body.queryResult.parameters.periodo;
+ // var periodofinale=req.body.queryResult.parameters.periodo.endDate;
   var intento= req.body.queryResult.intent.displayName;
   var temp = {
     google: {
@@ -34,7 +34,7 @@ restService.post("/echo", function(req, res) {
             simpleResponse: {
              
               
-              textToSpeech:"ti mostro le attività di " + persona +" " + "nel periodo da:" + periodoiniziale+"-" + periodofinale+" " +"intento:"+intento
+              textToSpeech:"ti mostro le attività di " + persona +" " + "nel periodo da:" + periodoiniziale+" " +"intento:"+intento
   
             }
           }
@@ -50,15 +50,15 @@ restService.post("/echo", function(req, res) {
       : "Seems like some problem. Speak again.";
       */
   var persona = req.body.queryResult.parameters.persona.name;
-  var periodoiniziale= req.body.queryResult.parameters.periodo.startDate;
-  var periodofinale=req.body.queryResult.parameters.periodo.endDate;
+  var periodoiniziale= req.body.queryResult.parameters.periodo;
+ // var periodofinale=req.body.queryResult.parameters.periodo.endDate;
   var intento= req.body.queryResult.intent.displayName;
   return res.json({
     payload: temp,
     data: temp,
-    fulfillmentText:"ti mostro le attività di " + persona +" " + "nel periodo da:" + periodoiniziale+"-" + periodofinale+" " +"intento:"+intento,
-    speech:"ti mostro le attività di " + persona +" " + "nel periodo da:" + periodoiniziale+"-" + periodofinale+" " +"intento:"+intento ,
-    displayText:"ti mostro le attività di " + persona +" " + "nel periodo da:" + periodoiniziale+"-" + periodofinale+" " +"intento:"+intento,
+    fulfillmentText:"ti mostro le attività di " + persona +" " + "nel periodo da:" + periodoiniziale+" " +"intento:"+intento,
+    speech:"ti mostro le attività di " + persona +" " + "nel periodo da:" + periodoiniziale+" " +"intento:"+intento,
+    displayText:"ti mostro le attività di " + persona +" " + "nel periodo da:" + periodoiniziale+" " +"intento:"+intento,
     source: "webhook-echo-sample1"
   });
 });
