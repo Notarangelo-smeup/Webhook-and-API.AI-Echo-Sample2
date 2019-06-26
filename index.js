@@ -59,9 +59,9 @@ restService.post("/echo", function(req, res) {
   return res.json({
     payload: temp,
     data: temp,
-    fulfillmentText:"ti mostro le attività di " + persona +" " + "nel periodo da:" + periodoiniziale+"-"+periodofinale+" " +"intento:"+intento,
-    speech:"ti mostro le attività di " + persona +" " + "nel periodo da:" + periodoiniziale+"-"+periodofinale+" " +"intento:"+intento,
-    displayText:"ti mostro le attività di " + persona +" " + "nel periodo da:" + periodoiniziale+"-"+periodofinale+" " +"intento:"+intento,
+    fulfillmentText:"ciao",
+    speech:"ciao",
+    displayText:"ciao",
     source: "webhook-echo-sample2"
   });
 });
