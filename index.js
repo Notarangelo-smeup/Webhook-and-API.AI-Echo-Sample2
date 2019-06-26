@@ -22,11 +22,11 @@ restService.post("/echo", function(req, res) {
       : "Seems like some problem. Speak again.";
   */
  
-  var persona = req.body.queryResult.parameters.persona.name;
-
- var  periodoiniziale=req.body.queryResult.parameters.periodo.startDate;
- var periodofinale=req.body.queryResult.parameters.periodo.endDate;
+ var persona = req.body.queryResult.outputContexts[0].parameters.persona.name;
+ var  periodoiniziale=req.body.queryResult.outputContexts[0].parameters.periodo.startDate;
+ var periodofinale=req.body.queryResult.outputContexts[0].parameters.periodo.endDate;
   var intento= req.body.queryResult.intent.displayName;
+  
   var temp = {
     google: {
       expectUserResponse: true,
@@ -52,9 +52,9 @@ restService.post("/echo", function(req, res) {
       ? req.body.queryResult.parameters.echoText
       : "Seems like some problem. Speak again.";
       */
-  var persona = req.body.queryResult.parameters.persona.name;
-  var periodoiniziale= req.body.queryResult.parameters.periodo.startDate;
-  var periodofinale=req.body.queryResult.parameters.periodo.endDate;
+ var persona = req.body.queryResult.outputContexts[0].parameters.persona.name;
+  var  periodoiniziale=req.body.queryResult.outputContexts[0].parameters.periodo.startDate;
+ var periodofinale=req.body.queryResult.outputContexts[0].parameters.periodo.endDate;
   var intento= req.body.queryResult.intent.displayName;
   return res.json({
     payload: temp,
