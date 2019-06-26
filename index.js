@@ -23,7 +23,7 @@ restService.post("/echo", function(req, res) {
   */
   var persona = req.body.queryResult.parameters.persona.name;
   var periodoiniziale= req.body.queryResult.parameters.periodo;
- // var periodofinale=req.body.queryResult.parameters.periodo.endDate;
+ var periodofinale=req.body.queryResult.parameters.periodo.endDate;
   var intento= req.body.queryResult.intent.displayName;
   var temp = {
     google: {
@@ -51,7 +51,7 @@ restService.post("/echo", function(req, res) {
       */
   var persona = req.body.queryResult.parameters.persona.name;
   var periodoiniziale= req.body.queryResult.parameters.periodo;
- // var periodofinale=req.body.queryResult.parameters.periodo.endDate;
+  var periodofinale=req.body.queryResult.parameters.periodo.endDate;
   var intento= req.body.queryResult.intent.displayName;
   return res.json({
     payload: temp,
