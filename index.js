@@ -21,9 +21,13 @@ restService.post("/echo", function(req, res) {
       ? req.body.queryResult.parameters.echoText
       : "Seems like some problem. Speak again.";
   */
+  var periodoiniziale=null;
+  var periodofinale=null;
+  var periodo =null;
   var persona = req.body.queryResult.parameters.persona.name;
-  var periodoiniziale= req.body.queryResult.parameters.periodo;
- var periodofinale=req.body.queryResult.parameters.periodo.endDate;
+  periodo= req.body.queryResult.parameters.periodo;
+  periodoiniziale=req.body.queryResult.parameters.periodo.startDate;
+  periodofinale=req.body.queryResult.parameters.periodo.endDate;
   var intento= req.body.queryResult.intent.displayName;
   var temp = {
     google: {
@@ -32,10 +36,15 @@ restService.post("/echo", function(req, res) {
         items: [
           {
             simpleResponse: {
-             
+             if(periodoiniziale==null)
               
-              textToSpeech:"ti mostro le attività di " + persona +" " + "nel periodo da:" + periodoiniziale+" " +"intento:"+intento
-  
+              {
+              textToSpeech:"ti mostro le attività di " + persona +" " + "nel periodo da:" + periodo+" " +"intento:"+intento
+              }
+              
+             else{
+                         textToSpeech:"ti mostro le attività di " + persona +" " + "nel periodo da:" + periodoiniziale+" " +"intento:"+intento
+                 }
             }
           }
         ]
@@ -56,9 +65,16 @@ restService.post("/echo", function(req, res) {
   return res.json({
     payload: temp,
     data: temp,
-    fulfillmentText:"ti mostro le attività di " + persona +" " + "nel periodo da:" + periodoiniziale+" " +"intento:"+intento,
+    if(periodoiniziale==null){
+    fulfillmentText:"ti mostro le attività di " + persona +" " + "nel periodo da:" + periodo+" " +"intento:"+intento,
+    speech:"ti mostro le attività di " + persona +" " + "nel periodo da:" + periodo+" " +"intento:"+intento,
+    displayText:"ti mostro le attività di " + persona +" " + "nel periodo da:" + periodo+" " +"intento:"+intento,
+    } 
+    else{
+       fulfillmentText:"ti mostro le attività di " + persona +" " + "nel periodo da:" + periodoiniziale+" " +"intento:"+intento,
     speech:"ti mostro le attività di " + persona +" " + "nel periodo da:" + periodoiniziale+" " +"intento:"+intento,
     displayText:"ti mostro le attività di " + persona +" " + "nel periodo da:" + periodoiniziale+" " +"intento:"+intento,
+    }
     source: "webhook-echo-sample1"
   });
 });
