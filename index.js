@@ -47,8 +47,8 @@ restService.post("/echo", function(req, res) {
     payload: temp,
     data: temp,
     fulfillmentText: persona+"nel periodo da:" + periodoiniziale+"-"+periodofinale+" " +"intento:"+intento,
-    speech:"nel periodo da:persona+" + periodoiniziale+"-"+periodofinale+" " +"intento:"+intento,
-    displayText:persona "nel periodo da:" + periodoiniziale+"-"+periodofinale+" " +"intento:"+intento,
+    speech:persona  persona+"nel periodo da:" + periodoiniziale+"-"+periodofinale+" " +"intento:"+intento,
+    displayText: persona+"nel periodo da:" + periodoiniziale+"-"+periodofinale+" " +"intento:"+intento,
     source: "webhook-echo-sample2"
   });
 });
