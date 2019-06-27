@@ -26,7 +26,7 @@ restService.post("/echo", function(req, res) {
             simpleResponse: {
              
               
-              textToSpeech: "persona:"+persona
+              textToSpeech: "persona:"
   
             }
           }
