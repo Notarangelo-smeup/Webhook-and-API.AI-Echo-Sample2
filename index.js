@@ -39,16 +39,16 @@ restService.post("/echo", function(req, res) {
     }
   };
 //  var speech ="ciao";
- var persona =   var  periodoiniziale=req.body.queryResult.outputContexts[0].parameters.persona.name;
+var persona = req.body.queryResult.outputContexts[0].parameters.persona.name;
   var  periodoiniziale=req.body.queryResult.outputContexts[0].parameters.periodo.startDate;
   var periodofinale=req.body.queryResult.outputContexts[0].parameters.periodo.endDate;
   var intento= req.body.queryResult.intent.displayName;
   return res.json({
     payload: temp,
     data: temp,
-    fulfillmentText: persona+"nel periodo da:" + periodoiniziale+"-"+periodofinale+" " +"intento:"+intento,
-    speech:persona+"nel periodo da:" + periodoiniziale+"-"+periodofinale+" " +"intento:"+intento,
-    displayText: persona+"nel periodo da:" + periodoiniziale+"-"+periodofinale+" " +"intento:"+intento,
+    fulfillmentText: persona + "nel periodo da:" + periodoiniziale+"-"+periodofinale+" " +"intento:"+intento,
+    speech: persona + "nel periodo da:" + periodoiniziale+"-"+periodofinale+" " +"intento:"+intento,
+    displayText: persona + " nel periodo da:" + periodoiniziale+"-"+periodofinale+" " +"intento:"+intento,
     source: "webhook-echo-sample2"
   });
 });
