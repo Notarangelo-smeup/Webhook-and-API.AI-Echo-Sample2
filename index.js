@@ -14,7 +14,7 @@ restService.use(
 restService.use(bodyParser.json());
 
 restService.post("/echo", function(req, res) {
-  // var speech =  "ciao";
+   var speech =  "ciao";
   // var persona = req.body.queryResult.outputContexts[0].parameters.persona.name;
    
   var temp = {
@@ -26,7 +26,7 @@ restService.post("/echo", function(req, res) {
             simpleResponse: {
              
               
-              textToSpeech: "persona:"
+              textToSpeech: speech
   
             }
           }
