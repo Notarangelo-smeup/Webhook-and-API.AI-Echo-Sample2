@@ -18,6 +18,9 @@ restService.post("/echo", function(req, res) {
   // var persona = req.body.queryResult.outputContexts[0].parameters.persona.name;
   
      var  periodoiniziale=req.body.queryResult.outputContexts[0].parameters.periodo.startDate;
+     var periodofinale=req.body.queryResult.outputContexts[0].parameters.periodo.endDate;
+     var intento= req.body.queryResult.intent.displayName;
+     
   var temp = {
     google: {
       expectUserResponse: true,
@@ -38,6 +41,8 @@ restService.post("/echo", function(req, res) {
 //  var speech ="ciao";
  // var persona = req.body.queryResult.outputContexts[0].parameters.persona.name;
   var  periodoiniziale=req.body.queryResult.outputContexts[0].parameters.periodo.startDate;
+  var periodofinale=req.body.queryResult.outputContexts[0].parameters.periodo.endDate;
+  var intento= req.body.queryResult.intent.displayName;
   return res.json({
     payload: temp,
     data: temp,
