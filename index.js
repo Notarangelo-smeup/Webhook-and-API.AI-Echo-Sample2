@@ -35,13 +35,13 @@ restService.post("/echo", function(req, res) {
     }
   };
 //  var speech ="ciao";
-  var persona = req.body.queryResult.outputContexts[0].parameters.persona.name;
+ // var persona = req.body.queryResult.outputContexts[0].parameters.persona.name;
   return res.json({
     payload: temp,
     data: temp,
-    fulfillmentText: "persona:"+persona,
-    speech: "persona:"+persona,
-    displayText: "persona:"+persona,
+    fulfillmentText: speech,
+    speech: speech,
+    displayText: speech,
     source: "webhook-echo-sample2"
   });
 });
