@@ -39,7 +39,7 @@ restService.post("/echo", function(req, res) {
     }
   };
 //  var speech ="ciao";
- var persona = req.body.queryResult.outputContexts[0].parameters.persona.original;
+ var persona = req.body.queryResult.outputContexts[0].parameters.'persona.original';
   var  periodoiniziale=req.body.queryResult.outputContexts[0].parameters.periodo.startDate;
   var periodofinale=req.body.queryResult.outputContexts[0].parameters.periodo.endDate;
   var intento= req.body.queryResult.intent.displayName;
