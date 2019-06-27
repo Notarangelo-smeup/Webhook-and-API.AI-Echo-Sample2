@@ -14,7 +14,8 @@ restService.use(
 restService.use(bodyParser.json());
 
 restService.post("/echo", function(req, res) {
-   var speech =  "ciao";
+  // var speech =  "ciao";
+   var persona = req.body.queryResult.outputContexts[0].parameters.persona.name;
    
   var temp = {
     google: {
@@ -25,7 +26,7 @@ restService.post("/echo", function(req, res) {
             simpleResponse: {
              
               
-              textToSpeech:speech 
+              textToSpeech: "persona:"+persona
   
             }
           }
@@ -33,13 +34,14 @@ restService.post("/echo", function(req, res) {
       }
     }
   };
-  var speech ="ciao";
+//  var speech ="ciao";
+  var persona = req.body.queryResult.outputContexts[0].parameters.persona.name;
   return res.json({
     payload: temp,
     data: temp,
-    fulfillmentText: speech,
-    speech: speech,
-    displayText: speech,
+    fulfillmentText: "persona:"+persona,
+    speech: "persona:"+persona,
+    displayText: "persona:"+persona,
     source: "webhook-echo-sample2"
   });
 });
