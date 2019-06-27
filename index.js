@@ -36,12 +36,13 @@ restService.post("/echo", function(req, res) {
   };
 //  var speech ="ciao";
  // var persona = req.body.queryResult.outputContexts[0].parameters.persona.name;
+  var  periodoiniziale=req.body.queryResult.outputContexts[0].parameters.periodo.startDate;
   return res.json({
     payload: temp,
     data: temp,
-    fulfillmentText: speech,
-    speech: speech,
-    displayText: speech,
+    fulfillmentText: periodoiniziale,
+    speech: periodoiniziale,
+    displayText: periodoiniziale,
     source: "webhook-echo-sample2"
   });
 });
