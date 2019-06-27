@@ -15,7 +15,7 @@ restService.use(bodyParser.json());
 
 restService.post("/echo", function(req, res) {
    //var speech =  "ciao";
-  var persona = req.body.queryResult.outputContexts[0].parameters.persona.original;
+  //var persona = req.body.queryResult.outputContexts[0].parameters.persona.original;
   
      var  periodoiniziale=req.body.queryResult.outputContexts[0].parameters.periodo.startDate;
      var periodofinale=req.body.queryResult.outputContexts[0].parameters.periodo.endDate;
@@ -46,9 +46,9 @@ restService.post("/echo", function(req, res) {
   return res.json({
     payload: temp,
     data: temp,
-    fulfillmentText: "nel periodo da:" + periodoiniziale+"-"+periodofinale+" " +"intento:"+intento,
-    speech:"nel periodo da:" + periodoiniziale+"-"+periodofinale+" " +"intento:"+intento,
-    displayText: "nel periodo da:" + periodoiniziale+"-"+periodofinale+" " +"intento:"+intento,
+    fulfillmentText: persona+"nel periodo da:" + periodoiniziale+"-"+periodofinale+" " +"intento:"+intento,
+    speech:"nel periodo da:persona+" + periodoiniziale+"-"+periodofinale+" " +"intento:"+intento,
+    displayText:persona "nel periodo da:" + periodoiniziale+"-"+periodofinale+" " +"intento:"+intento,
     source: "webhook-echo-sample2"
   });
 });
