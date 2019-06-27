@@ -30,7 +30,7 @@ restService.post("/echo", function(req, res) {
             simpleResponse: {
              
               
-              textToSpeech: periodoiniziale
+              textToSpeech: "nel periodo da:" + periodoiniziale+"-"+periodofinale+" " +"intento:"+intento
   
             }
           }
@@ -46,9 +46,9 @@ restService.post("/echo", function(req, res) {
   return res.json({
     payload: temp,
     data: temp,
-    fulfillmentText: periodoiniziale,
-    speech: periodoiniziale,
-    displayText: periodoiniziale,
+    fulfillmentText: "nel periodo da:" + periodoiniziale+"-"+periodofinale+" " +"intento:"+intento,
+    speech:"nel periodo da:" + periodoiniziale+"-"+periodofinale+" " +"intento:"+intento,
+    displayText: "nel periodo da:" + periodoiniziale+"-"+periodofinale+" " +"intento:"+intento,
     source: "webhook-echo-sample2"
   });
 });
