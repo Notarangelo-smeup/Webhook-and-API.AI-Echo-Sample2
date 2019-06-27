@@ -14,9 +14,10 @@ restService.use(
 restService.use(bodyParser.json());
 
 restService.post("/echo", function(req, res) {
-   var speech =  "ciao";
+   //var speech =  "ciao";
   // var persona = req.body.queryResult.outputContexts[0].parameters.persona.name;
-   
+  
+     var  periodoiniziale=req.body.queryResult.outputContexts[0].parameters.periodo.startDate;
   var temp = {
     google: {
       expectUserResponse: true,
@@ -26,7 +27,7 @@ restService.post("/echo", function(req, res) {
             simpleResponse: {
              
               
-              textToSpeech: speech
+              textToSpeech: periodoiniziale
   
             }
           }
