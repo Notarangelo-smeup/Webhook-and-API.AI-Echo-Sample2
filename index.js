@@ -35,7 +35,7 @@ restService.post("/echo", function(req, res) {
           {
             simpleResponse: {
              
-              textToSpeech:"ti mostro le attività di " + persona +" " + "nel periodo da:" + periodoiniziale+"-"+periodofinale+" " +"intento:"+intento
+              textToSpeech:   "ciao"//"ti mostro le attività di " + persona +" " + "nel periodo da:" + periodoiniziale+"-"+periodofinale+" " +"intento:"+intento
               
               
             
