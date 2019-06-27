@@ -15,7 +15,7 @@ restService.use(bodyParser.json());
 
 restService.post("/echo", function(req, res) {
   // var speech =  "ciao";
-   var persona = req.body.queryResult.outputContexts[0].parameters.persona.name;
+  // var persona = req.body.queryResult.outputContexts[0].parameters.persona.name;
    
   var temp = {
     google: {
