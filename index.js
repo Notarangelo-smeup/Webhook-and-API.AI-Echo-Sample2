@@ -48,7 +48,7 @@ var persona = req.body.queryResult.outputContexts[0].parameters.persona.name;
     data: temp,
     fulfillmentText: persona+ "nel periodo da:" + periodoiniziale+"-"+periodofinale+" " +"intento:"+intento,
     speech:"nel periodo da:persona+" + periodoiniziale+"-"+periodofinale+" " +"intento:"+intento,
-    displayText: persona" nel periodo da:" + periodoiniziale+"-"+periodofinale+" " +"intento:"+intento,
+    displayText: persona +" nel periodo da:" + periodoiniziale+"-"+periodofinale+" " +"intento:"+intento,
     source: "webhook-echo-sample2"
   });
 });
